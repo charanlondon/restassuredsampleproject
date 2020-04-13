@@ -153,9 +153,11 @@ git pull -> this action will pull remote repository to git repository then proje
 
 step1 -> sign up to github account repository and get the account
 github url : https://github.com/join?source=header
+user name- charanlondon
 
 step2-> login to github
 step3-> create a new repository
+after created new repository, remote repository url is https://github.com/charanlondon/restassuredsampleproject.git
 
 in Intellij -> click top menu VCS -> click enable version control integration -> select git from dropdown -> ok-> after that we can see the version
 control down next to terminal below footer , that means your project workspace is added into git repository
@@ -171,6 +173,6 @@ still want those files into specific ignore folder we can do this since intillij
  -> once re-lunch your intellij project we can see popup saying create .gitignore we can click that, on this file i have mentioned .idea file
  to ignore
 
- you can see that green color highlighted means its already added into git repository , if you want then we can push those changes
- to remote repository by clicking on top VCS option ->
+ you can see that green color highlighted means its already added into git repository , if you want then we can commit those changes
+ to git repository by clicking on top VCS option -> commit
 
