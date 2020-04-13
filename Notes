@@ -1,0 +1,176 @@
+ I have created this Note text file to write important points :-
+
+Automation Framework
+---------------------
+3 Phases to create automation framework
+
+1. Implementation/Development
+2. Execution
+3. Maintainance
+
+1> Implementation/Development
+-------------------------------
+-> create Maven Project
+-> Update POM.xml ( add all dependencies Jar )
+-> Create Folder Structure
+
+Folder Structure
+-----------------------
+Project Name
+|
+base ( package)
+|
+test cases ( package)
+|
+utilities ( package)
+|
+logs (folder)
+|
+reports ( folder)
+|
+pom.xml
+|
+testng.xml
+
+testng report is not more attractive, so in project mostly no one using testng report
+for attractive report we should use extent report , just add the jar file in pom.xml file and that will generate the report
+adding lister tag in testng.xml to capture all the log activities ( PASS,FAIL,SKIPPED) when we execute test suite
+
+2. Execution
+---------------------------------
+How many ways to execute framework/ test cases
+i. TestNG.xml
+ii. POM.xml ( but we need to add some plug-ins to execute using pom.xml)
+iii. command prompt
+iv. run.bat
+v. jenkins
+
+i> TestNG.xml
+---------------
+we can execute test cases using TestNG.xml and POM.xml inside Intellij/Eclipse only
+
+II> POM.xml
+--------------
+To execute pom.xml file we need to add below 2 plugins into pom.xml file
+maven-compiler-plugin added in pom.xml file , this plugin basically compiles project
+maven-surefire-plugin will execute the testng.xml file
+how to execute pom.xml
+right click pom.xml -> run as Maven Test
+in intellij click the pom.xml file then on top menu header click Run -> run
+
+iii> Command prompt
+--------------------
+if we want to execute test cases in command prompt we need to install/configure maven because maven is available inside intellij only
+note - we wont execute test cases in command prompt unless until i & ii ( testng.xml and pom.xml) option is success
+
+Maven can execute in 2 flavours -
+-> maven available as plugin within intellij
+-> maven available as software on OS ( download the maven software below)
+
+download maven software and extract the binary Zip file
+https://maven.apache.org/download.cgi
+set the maven path in environment variable in your MAC laptop
+
+how to set maven path environment variable in MAC-
+go to this link -> https://mkyong.com/maven/install-maven-on-mac-osx/
+
+vim ~/.bash_profile
+export M2_HOME=/Users/charan/Documents/apache-maven-3.6.0
+export PATH=$PATH:$M2_HOME/bin
+
+step 1:
+vim ~/.zshrc
+
+step 2:(Add at the end of the file)
+source ~/.bash_profile;
+
+after that save the changes by press esc -> press shift -> enter wq
+
+step 3:After come out to terminal , enter below command to take the settings into effect instantly
+source ~/.bash_profile
+
+verify maven installed on your MAC or not :
+go to your command prompt -> mvn --version
+
+to execute test cases in command prompt , type below command
+mvn clean install ( this command will run the pom.xml file)
+
+------------------
+iv> run.bat
+
+to execute test cases using run.bat file will trigger your test suites
+
+how to create run.bat file
+go to your project directory -> right click -> create file name as run.bat ( this will change the batch icon)
+in run.bat file -> type below 2 commands and save the bat file
+add your project e.g cd Documents/projectSetup/RestAssured/
+mvn clean install
+
+Then double click the run.bat file -> that will trigger the test suite
+------------------------------
+v> Jenkins
+
+Execute test cases using Jenkins
+in real project Devops people created account for you and they would give the account details to login into jenkins and run your project
+
+But to practice in your local you can also execute your tests using installing jenkins software in your locale
+
+Install jenkins multiple ways:
+-> download the exe file ( that will permanent)
+-> war file ( that will temporary)
+
+so we will perform temporary process to run jenkins
+https://jenkins.io
+left side -> click on Generic Java package ( .war)
+once download the war file save this in your some folder
+
+How to run the jenkins war file :
+go to command prompt -> specify your war file location -> java -jar jenkins.war ( it will take few minutes and
+wait till message to get "Jenkins is fully up and running" ) once this message got don't close your terminal
+
+go to your browser -> http://localhost:8080/
+it will ask 1st time password , follow the instruction and get the password , after that create an account
+
+I have created new account , username is charan and passwrod is aakash$1
+
+after login -> click Net item -> give the name as Rest Assured Sample Project -> click free style  -> click OK -> at last
+select Build as Execute Windows Batch command -> enter below lines
+cd ~/Documents/projectSetup/RestAssured/
+run.bat
+
+Then click build -> it will run your test suite
+
+----------------------------
+Version Control - Git & Github
+-------------------------
+git is is local repository , github is a remote repository and its open source
+
+there are below actions where we can perform
+git add . -> this action will add the changes from project workspace into git repository
+git commit -m 'adding changes' -> this action will commit from project workspace to git repository
+git push -> this action will add the changes from your git repository into remote repository
+git pull -> this action will pull remote repository to git repository then project workspace
+
+step1 -> sign up to github account repository and get the account
+github url : https://github.com/join?source=header
+
+step2-> login to github
+step3-> create a new repository
+
+in Intellij -> click top menu VCS -> click enable version control integration -> select git from dropdown -> ok-> after that we can see the version
+control down next to terminal below footer , that means your project workspace is added into git repository
+
+files highlighted in red color are unversioned from git repository if you want to add them then select those files and click add into git
+repository -> then git commit
+
+sometimes few unversioned files no need to add them in git repository because those files are created by Intellij hence ignore them, if you
+still want those files into specific ignore folder we can do this since intillij provides git ignore future , how do this follow below steps
+
+ how to add .ignore in git
+ -> go to top menu click Intellij IDEA -> preferences -> plugins-> .ignore ( from market place) -> install and restart
+ -> once re-lunch your intellij project we can see popup saying create .gitignore we can click that, on this file i have mentioned .idea file
+ to ignore
+
+ you can see that green color highlighted means its already added into git repository , if you want then we can push those changes
+ to remote repository by clicking on top VCS option ->
+

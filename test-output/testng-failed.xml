@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [All Test Suite]">
+  <listeners>
+    <listener class-name="commm.empoyeeapi.utiliities.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="/Users/charan/Documents/projectSetup/RestAssured(failed)">
+    <classes>
+      <class name="commonn.employeeapi.testcases.TC005_Delete_Employee_Record">
+        <methods>
+          <include name="checkResponseBody"/>
+          <include name="checkStatusCode"/>
+          <include name="setup"/>
+          <include name="checkContentType"/>
+          <include name="checkContentLength"/>
+          <include name="tearDown"/>
+          <include name="deleteEmployee"/>
+        </methods>
+      </class> <!-- commonn.employeeapi.testcases.TC005_Delete_Employee_Record -->
+      <class name="commonn.employeeapi.testcases.TC004_Put_Employee_Record">
+        <methods>
+          <include name="checkResponseBody"/>
+          <include name="setup"/>
+          <include name="putEmployeeRecord"/>
+          <include name="checkContentLength"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- commonn.employeeapi.testcases.TC004_Put_Employee_Record -->
+      <class name="commonn.employeeapi.testcases.TC003_Post_Employee_Record">
+        <methods>
+          <include name="createEmployeeRecord"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="checkContentLength"/>
+          <include name="checkResponseBody"/>
+        </methods>
+      </class> <!-- commonn.employeeapi.testcases.TC003_Post_Employee_Record -->
+      <class name="commonn.employeeapi.testcases.TC002_Get_Single_Employee_Record">
+        <methods>
+          <include name="getEmployeeData"/>
+          <include name="checkContentLength"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- commonn.employeeapi.testcases.TC002_Get_Single_Employee_Record -->
+    </classes>
+  </test> <!-- /Users/charan/Documents/projectSetup/RestAssured(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->
