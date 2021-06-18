@@ -1,0 +1,88 @@
+RestAssured testing using BDD Approach
+
+pre-requisities to setup environment :
+-------------------------------------
+Java
+IDE - Intellij or Eclipse
+Maven
+TestNG
+
+Rest Assured Dependencies
+--------------------------
+Below dependencies need to add in POM.xml file
+
+rest-assured
+json-schema-validator
+json-path
+xml-path
+testng
+
+- below 3 dependencies is important for BDD approach, if you dont use bdd approach then below 3 dependency not required
+java-hamcrest
+hamcrest-core
+hamcrest-library
+
+- we can use one dependency hamcrest-all instead of above 3 , this dependency hamcrest-all which includes all above 3 dependencies
+- if you add this hamcrest-all into your pom.xml then no need to add above 3 depencies individually
+
+Keywords used in BDD :
+--------------------------
+API testing using rest assured for BDD approach divided into 3 sections
+
+given() - in this section we will perfrom basically below
+set cookies, add auth,add param, set headers info etc..
+- given section basically contains the pre-requisites
+- rest assured always starts with given() keyword
+
+when() - in this section we will perfrom basically
+get , post, put, delete
+-when section basically performing the condition or request type
+
+then() - in this section we will perfrom basically below
+validate status code, status line, extract resonse, extract headers cookies & response body etc..
+then section gives the results and validation
+
+Get Request URL -
+http://restapi.demoqa.com/utilities/weather/city/Delhi
+
+when you writing code make sure to import the below 2 packages
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.*;
+
+JSON Path Finder for Chrome
+---------------------------
+- just type JSON Path Finder for Chrome in google and add the extension
+- click the symbol of json path filer to open in another tab
+- this is using for getting the path of attribute name easily. which will be more useful when your json is big and complex
+
+Serializatiion & Deserializaation
+-----------------------------------
+- Both are java concept
+- in java we are creating class and for calss we creating object .
+- converting the object into file format is called serialization , converting file format to object is called Deserialization
+- check the examples in class SerializationDeserializationTest
+- for Serializatiion & Deserializaation testing  download videogame DB api and use the endpoint for testing
+
+Download videogame DB api : To use this video game db api testing we need to follow below 3 points of pre-requisites
+------------------------
+- this api comes under Gradle
+
+pre-requisites :
+
+1)Intall Gradle on windows or mac
+go to this url and install Gradle - https://gradle.org/releases/
+remember that before install gradle java should be installed in ur system
+- there different release versions , for e.g v6.3 -> click binary-only
+- after download save in Documents folder
+how to set environment variable -
+open the terminal -> sudo vi ~/.bash_profile -> enter the password -> type the belowcommand and save it by type wq, close the current terminal and
+open the fresh new terminal and type gradle -v ( it will show the version which one installed by you)
+export GRADLE_HOME=/Users/charan/Documents/gradle-6.3
+export PATH=$GRADLE_HOME/bin:$PATH
+
+2) Video game DB api download link
+https://github.com/james-willett/VideoGameDB
+click download and unzip the file and save in ur personal folder
+
+3)How to run Video game DB application using Gradle
+open terminal ->navigate your video game folder e.g VideoGameDB-master -> type this command 

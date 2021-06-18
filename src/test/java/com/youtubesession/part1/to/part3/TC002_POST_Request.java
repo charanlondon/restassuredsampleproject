@@ -36,6 +36,7 @@ public class TC002_POST_Request {
         requestParameters.put("Email","charan123@gmail.com");
 
         // sending this in json format so that we need to add header
+        // Also in POST method we have to always add header
         httpRequest.header("Content-Type","application/json");
 
         // below method is to add above mentioned json parameters as body
